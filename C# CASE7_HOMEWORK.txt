@@ -1,0 +1,355 @@
+//Case7. Единицы массы пронумерованы следующим образом: 1 — килограмм,
+//2 — миллиграмм, 3 — грамм, 4 — тонна, 5 — центнер.
+//Дан номер единицы массы
+//(целое число в диапазоне 1–5) и масса тела в этих единицах
+//(вещественное число). Найти массу тела в килограммах.
+
+
+
+
+
+
+Console.OutputEncoding = System.Text.Encoding.Default; //Uk,ua - lg
+Console.ForegroundColor = ConsoleColor.Blue; //set standart Color
+
+Console.WriteLine("Вам варто вибрати що ви плануєто конвертувати в кілограми.");
+Console.WriteLine(" ");
+Console.WriteLine("(1) міліграм");
+Console.WriteLine("(2) грами");
+Console.WriteLine("(3) кілограм?");
+Console.WriteLine("(4) тонни");
+Console.WriteLine("(5) центнер");
+Console.WriteLine("");
+Console.WriteLine("виберіть та в ведіть цифру із дужків.");
+
+int massaInputs = Convert.ToInt16(Console.ReadLine()); //В ведення значення для вибора оператора обробки (1-5).
+
+bool nextCode = true; //для пропуску циклу.
+
+string restart = "none"; //для повторення циклу.
+
+
+
+
+
+while (nextCode)
+{
+    switch (massaInputs)
+    {
+
+        default:
+            nextCode = true;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Thread.Sleep(100);
+            Console.WriteLine("Ви обрали щось не те спробуйте ще раз!");
+            break;
+        case 1:
+            nextCode = false;
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Міліграм в кілограм");
+            Console.WriteLine("Ведіть значеня в міліграмах в послідуючих діях вони будуть конвертовані в кілограми, з округленням в більшу кількість.");
+
+            long miligrams = Convert.ToInt64(Console.ReadLine());
+            miligrams = miligrams / 1000000;
+            //miligrams = (long)Math.Round(miligrams);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(miligrams+" -  Значення в кілограмах");
+
+
+            //-------------BLOCK-------------//
+            Thread.Sleep(3000);
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("Бажаєте почати спочатку?, якщо так то напишіть слово (Так) якщо ні то (Ні)");
+            restart = Console.ReadLine(); // повернення?
+
+
+
+            switch (restart) // повернення?
+            {
+                case "Так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+                case "так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+
+                case "Ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+                case "ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Програму виключено, трапилася помилка.");
+                    Environment.Exit(0);
+                    break;
+            }
+            //-------------BLOCK-------------//
+
+
+            break;
+        case 2:
+            nextCode = false;
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Грам в кілограм");
+
+
+            long gram = Convert.ToInt64(Console.ReadLine());
+            gram = gram / 1000;
+            //miligrams = (long)Math.Round(miligrams);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(gram + " -  Значення в кілограмах");
+
+
+            //-------------BLOCK-------------//
+            Thread.Sleep(3000);
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("Бажаєте почати спочатку?, якщо так то напишіть слово (Так) якщо ні то (Ні)");
+            restart = Console.ReadLine(); // повернення?
+
+
+
+            switch (restart) // повернення?
+            {
+                case "Так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+                case "так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+
+                case "Ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+                case "ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Програму виключено, трапилася помилка.");
+                    Environment.Exit(0);
+                    break;
+            }
+            //-------------BLOCK-------------//
+            break;
+        case 3:
+            nextCode = false;
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Кілограм в кілограм");
+
+
+
+            long Kilogram = Convert.ToInt64(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(Kilogram + " -  Значення в кілограмах");
+
+
+
+            //-------------BLOCK-------------//
+            Thread.Sleep(3000);
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("Бажаєте почати спочатку?, якщо так то напишіть слово (Так) якщо ні то (Ні)");
+            restart = Console.ReadLine(); // повернення?
+
+
+
+            switch (restart) // повернення?
+            {
+                case "Так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+                case "так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+
+                case "Ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+                case "ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Програму виключено, трапилася помилка.");
+                    Environment.Exit(0);
+                    break;
+            }
+            //-------------BLOCK-------------//
+            break;
+        case 4:
+            nextCode = false;
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Тонна в кілограм");
+
+
+            long tonna = Convert.ToInt64(Console.ReadLine());
+            tonna = tonna * 1000;
+            //miligrams = (long)Math.Round(miligrams);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(tonna + " -  Значення в кілограмах");
+
+
+            //-------------BLOCK-------------//
+            Thread.Sleep(3000);
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("Бажаєте почати спочатку?, якщо так то напишіть слово (Так) якщо ні то (Ні)");
+            restart = Console.ReadLine(); // повернення?
+
+
+
+            switch (restart) // повернення?
+            {
+                case "Так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+                case "так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+
+                case "Ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+                case "ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Програму виключено, трапилася помилка.");
+                    Environment.Exit(0);
+                    break;
+            }
+            //-------------BLOCK-------------//
+            break;
+        case 5:
+            nextCode = false;
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Центнер в кілограм");
+
+
+            long center = Convert.ToInt64(Console.ReadLine());
+            center = center * 100;
+            //miligrams = (long)Math.Round(miligrams);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(center + " -  Значення в кілограмах");
+
+
+
+
+            //-------------BLOCK-------------//
+            Thread.Sleep(3000);
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("  ");
+            Console.WriteLine("Бажаєте почати спочатку?, якщо так то напишіть слово (Так) якщо ні то (Ні)");
+            restart = Console.ReadLine(); // повернення?
+
+
+
+            switch (restart) // повернення?
+            {
+                case "Так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+                case "так":
+                    nextCode = true;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Я вас повернув до вибору, можите обирати..");
+                    break;
+
+                case "Ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+                case "ні":
+                    nextCode = false;
+                    Console.WriteLine("Програму виключено.");
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Програму виключено, трапилася помилка.");
+                    Environment.Exit(0);
+                    break;
+            }
+            //-------------BLOCK-------------//
+            break;
+
+
+    }
+
+
+    if (nextCode == true)
+    {
+
+        Console.WriteLine("   ");
+        Console.WriteLine("   ");
+        Console.WriteLine("   ");
+
+
+        Console.WriteLine("Оберіть щось!!!");
+        Thread.Sleep(500);
+        massaInputs = Convert.ToInt16(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Red;
+        
+    }
+
+    else if (nextCode == false)
+    {
+        Console.WriteLine("   ");
+        Console.ForegroundColor = ConsoleColor.Blue;
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+    }
+}
+
